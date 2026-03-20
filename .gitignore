@@ -33,9 +33,9 @@ packages/
 
 # ASP.NET configuration secrets
 appsettings.Development.json
+appsettings.Production.json
 appsettings.Local.json
 appsettings.*.local.json
-appsettings.json
 secrets.json
 
 # Publish output
