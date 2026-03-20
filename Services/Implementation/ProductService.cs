@@ -47,7 +47,7 @@ public class ProductService : IProductService
         var newProduct = new Product
         {
             Name = product.Name,
-            Price = product.Price
+            Price = product.Price ?? 0
         };
 
         await _productRepository.CreateAsync(newProduct);

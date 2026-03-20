@@ -25,7 +25,7 @@ public class ProductsController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<ProductDTO>> GetProductById(int id)
+    public async Task<IActionResult> GetProductById(int id)
     {
         var product = await _productService.GetProductByIdAsync(id);
 
@@ -35,7 +35,7 @@ public class ProductsController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public async Task<ActionResult> DeleteProductById(int id)
+    public async Task<IActionResult> DeleteProductById(int id)
     {
         await _productService.RemoveProductByIdAsync(id);
 
@@ -43,9 +43,12 @@ public class ProductsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult> CreateProduct(CreateProductDTO product)
+    public async Task<IActionResult> CreateProduct(CreateProductDTO product)
     {
-        if (product is null) return BadRequest();
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
 
         var newProductId = await _productService.CreateProductAsync(product);
 
