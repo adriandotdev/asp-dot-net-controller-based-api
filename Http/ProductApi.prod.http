@@ -1,0 +1,21 @@
+@baseUrl = https://asp-dot-net-controller-based-api.onrender.com
+
+GET {{baseUrl}}/api/products
+
+### 
+
+GET {{baseUrl}}/api/products/5
+
+### 
+
+DELETE {{baseUrl}}/api/products/1
+
+### 
+
+POST {{baseUrl}}/api/products
+Content-Type: application/json
+
+{
+    "Name": "San Miguel Pale Pilsen Big",
+    "Price": 140
+}
