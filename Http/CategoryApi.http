@@ -1,0 +1,12 @@
+@baseUrl = http://localhost:5222
+
+GET {{baseUrl}}/api/categories
+
+### 
+
+POST {{baseUrl}}/api/categories
+Content-Type: application/json
+
+{
+    "Name": "Beverage"
+}

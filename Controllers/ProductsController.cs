@@ -7,12 +7,10 @@ namespace ProductApi.Controllers;
 [Route("api/[controller]")]
 public class ProductsController : ControllerBase
 {
-    private readonly ProductContext _context;
     private readonly IProductService _productService;
 
-    public ProductsController(ProductContext context, IProductService productService)
+    public ProductsController(IProductService productService)
     {
-        _context = context;
         _productService = productService;
     }
 

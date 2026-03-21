@@ -9,9 +9,9 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ProductApi.Migrations
 {
-    [DbContext(typeof(ProductContext))]
-    [Migration("20260321041632_AddCategoryEntity")]
-    partial class AddCategoryEntity
+    [DbContext(typeof(AppDbContext))]
+    [Migration("20260321151146_AddCategories")]
+    partial class AddCategories
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,7 +37,7 @@ namespace ProductApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Category");
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("Product", b =>
